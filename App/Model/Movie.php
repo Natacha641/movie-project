@@ -62,6 +62,15 @@ class Movie
         $this->publishAt = $publishAt;
     }
 
+    public function getDuration(): ?int
+    {
+        return $this->duration;
+    }
+    public function setDuration(?int $duration): void
+    {
+        $this->duration = $duration;
+    }
+
     public function getCover(): ?string
     {
         return $this->cover;

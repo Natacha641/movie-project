@@ -23,6 +23,11 @@
                         aria-label="Description du film">
                 </textarea>
                 </label>
+                <!--duration-->
+                <label>Durée du film (mins)
+                    <textarea name="duration" placeholder="Saisir la durée en minutes"
+                        aria-label="Durée du film">
+                    </textarea>
                 <label>Saisir la date de sortie
                     <input type="datetime-local" name="publish_at" aria-label="Choix de la date de sortie">
                 </label>
@@ -36,8 +41,12 @@
                     <?php endforeach ?>
                 </select>
             <fieldset>
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="file" name="fichier">
+            </form>
                 <input type="submit" value="Ajouter" name="submit">
         </form>
+
         <p><?= $data["error"] ?? "" ?></p>
         <p><?= $data["valid"] ?? "" ?></p>
     </main>

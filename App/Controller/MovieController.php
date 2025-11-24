@@ -38,19 +38,25 @@ class MovieController extends AbstractController
             if (
                 !empty($_POST["title"]) &&
                 !empty($_POST["description"]) &&
-                !empty($_POST["publish_at"])
+                !empty($_POST["publish_at"]) &&
+                !empty($_POST["duration"]) &&
+                !empty($_POST["cover"])
                 ) {
 
                 //Nettoyer les entrées utilsiateur ($_POST du formulaire)
                 $title = Tools::sanitize($_POST["title"]);
                 $description = Tools::sanitize($_POST["description"]);
                 $publishAt = Tools::sanitize($_POST["publish_at"]);
+                $duration = Tools::sanitize($_POST["duration"]);
+                $cover = Tools::sanitize($_POST["cover"]);
                 //Créer un objet Movie
                 $movie = new Movie();
                 //Setter les valeurs
                 $movie->setTitle($title);
                 $movie->setDescription($description);
                 $movie->setPublishAt(new \DateTimeImmutable($publishAt));
+                $movie->setDuration($duration);
+                $movie->setCover($cover);
                 //Test si les categories existes
                 if (isset($_POST["categories"])) {
                     //Setter les categories à $movie
