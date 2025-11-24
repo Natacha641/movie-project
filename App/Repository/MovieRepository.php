@@ -29,7 +29,7 @@ class MovieRepository
     {
         try {
             //Ecrire la requête
-            $sql = "INSERT INTO movie(title, `description`, publish_at, duration, cover)VALUE(?,?,?,?,?)";     
+            $sql = "INSERT INTO movie(title, `description`, publish_at, duration, cover)VALUE(?,?,?,?,?)";
             //Préparer la requête
             $req = $this->connect->prepare($sql);
             //Assigner les paramètres
